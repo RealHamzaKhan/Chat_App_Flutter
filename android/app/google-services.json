@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "801378414511",
+    "project_id": "ranchat-d5fb1",
+    "storage_bucket": "ranchat-d5fb1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801378414511:android:084326b02d2f0335c7895a",
+        "android_client_info": {
+          "package_name": "com.realhamzakhan.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801378414511-gf3vj1e3iphd8nhv9t1irps4ho9t2cp3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArB1sNleUO7l5PwNUt37eQGnCHYZM7Brs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801378414511-gf3vj1e3iphd8nhv9t1irps4ho9t2cp3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
