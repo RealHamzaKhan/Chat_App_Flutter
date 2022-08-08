@@ -3,6 +3,7 @@ import 'package:chat_app/chat_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'constants.dart';
 class Login extends StatefulWidget {
@@ -123,6 +124,11 @@ class _LoginState extends State<Login> {
                                 {
                                   mycolor=Colors.transparent;
                                   setState((){});
+                                  SharedPreferences sp= await SharedPreferences.getInstance();
+                                  sp.setString('email', email);
+                                  sp.setString('password', password);
+                                  sp.setBool('isLogin', true);
+
                                   Navigator.pushNamed(context, ChatScreen.id);
 
                                 }

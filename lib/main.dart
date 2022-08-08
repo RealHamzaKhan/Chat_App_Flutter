@@ -1,4 +1,5 @@
 import 'package:chat_app/chat_screen.dart';
+import 'package:chat_app/loadingscreen.dart';
 import 'package:chat_app/login_screen.dart';
 import 'package:chat_app/signup_screen.dart';
 import 'package:chat_app/welcome_screen.dart';
@@ -17,10 +18,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-      initialRoute: Welcome_Screen.id,
+      initialRoute: Loading_Screen.id,
       routes: {
        Login.id:(context)=>const Login(),
         Signup.id:(context)=>const Signup(),
+        Loading_Screen.id:(context)=>const Loading_Screen(),
         Welcome_Screen.id:(context)=>const Welcome_Screen(),
         ChatScreen.id:(context)=>const ChatScreen(),
       },

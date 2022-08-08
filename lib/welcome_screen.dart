@@ -1,6 +1,8 @@
+import 'package:chat_app/chat_screen.dart';
 import 'package:chat_app/login_screen.dart';
 import 'package:chat_app/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'background_image.dart';
 import 'constants.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -97,8 +99,16 @@ class _Welcome_ScreenState extends State<Welcome_Screen> {
                             fontSize: 18,
                             fontWeight: FontWeight.w500),
                       ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, Signup.id);
+                      onPressed: () async{
+                        SharedPreferences sp=await SharedPreferences.getInstance();
+                        bool isLogin=sp.getBool('isLogin')??false;
+                        if(isLogin)
+                        {
+                          Navigator.pushNamed(context, ChatScreen.id);
+                        }
+                        else{
+                          Navigator.pushNamed(context, Signup.id);
+                        }
                       },
                     ),
                   ),
@@ -121,8 +131,17 @@ class _Welcome_ScreenState extends State<Welcome_Screen> {
                             fontSize: 18,
                             fontWeight: FontWeight.w500),
                       ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, Login.id);
+                      onPressed: () async{
+                        SharedPreferences sp=await SharedPreferences.getInstance();
+                         bool isLogin=sp.getBool('isLogin')??false;
+                        if(isLogin)
+                          {
+                            Navigator.pushNamed(context, ChatScreen.id);
+                          }
+                        else{
+                          Navigator.pushNamed(context, Login.id);
+                        }
+
                       },
                     ),
                   ),

@@ -5,6 +5,7 @@ import 'package:chat_app/welcome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 FirebaseFirestore _firestore=FirebaseFirestore.instance;
 class ChatScreen extends StatefulWidget {
   static const String id='chatscreen';
@@ -56,7 +57,9 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Text('Ranchat',style: title.copyWith(color: Colors.white,fontSize: 30),),
         actions: [
           IconButton(
-              onPressed:(){
+              onPressed:()async{
+                SharedPreferences sp=await SharedPreferences.getInstance();
+                sp.clear();
                 Navigator.pushNamed(context, Login.id);
               } ,
               icon: const Icon(Icons.logout_outlined),),
